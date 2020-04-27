@@ -1,0 +1,14 @@
+CREATE DATABASE pizza;
+
+USE pizza;
+CREATE TABLE menu (id INT AUTO_INCREMENT PRIMARY KEY,
+                   name varchar(255),
+                   ingredients varchar(255),
+                   price SMALLINT DEFAULT NULL);
+
+INSERT INTO menu (name,ingredients,price)
+VALUES ("Pepperoni Pizza","Dough, Cheese, Tomato Sauce, Pepperoni, Mozzarella, Parmigiano-Reggiano", 9),
+	   ("Four Seasons Pizza","Dough, Cheese, Artichokes, tomatoes, basil, prosciutto, ham, mushrooms, olives", 12),
+	   ("Pepperoni pizza","Dough, Cheese, Tomato Sauce, and three more toppings of your choice", 18); 	
+
+SELECT name, ingredients, concat('$', (price)) AS price FROM menu
